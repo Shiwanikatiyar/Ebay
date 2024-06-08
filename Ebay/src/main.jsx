@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter } from 'react-router-dom'
+import { AuthContextProvider } from './Context/AuthContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
- <ChakraProvider>
-     <App />
- </ChakraProvider>
- 
+        <ChakraProvider>
+                <AuthContextProvider>
+                        <BrowserRouter>
+                                <App />
+                        </BrowserRouter>
+                </AuthContextProvider>
+        </ChakraProvider>
+
 )

@@ -1,40 +1,60 @@
 import React from 'react'
+
+
 //ANCHOR chakra 
-import { Flex, Spacer, Box, Link, Text, Center } from '@chakra-ui/react'
+import { Flex, Spacer, Box, Link, Text, Center, Image, Container } from '@chakra-ui/react'
 import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    IconButton,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
+    Menu, MenuButton, MenuList, MenuItem, IconButton, MenuItemOption,
+    MenuGroup, MenuOptionGroup, MenuDivider, Input, Button
 } from '@chakra-ui/react'
+
+
 //NOTE icons
 import { FaRegBell } from "react-icons/fa6";
-import { BsCart2 } from "react-icons/bs";
+import { BsCart2, BsFullscreen } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
+import { IoSearchOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom'
+
+// Start Navbar
 const Navbar = () => {
+    const navigate = useNavigate()
+    const clickres = () => {
+        navigate("/register")
+    }
+    const clicksign = () => {
+        navigate("/signin")
+    }
+    const clickDailyDeals = () => {
+        navigate("/dailydeals")
+    }
+    const clickHeplContact = () => {
+        navigate('/help&contact')
+    }
+    const clickSell = () => {
+        navigate('/sell')
+    }
+
     return (
         <div>
             <Flex border="1px solid" px={10} display="flex" alignItems="center" justifyContent="space-between" >
                 <Box display="flex" alignItems="center" justifyContent="space-between" gap={6} >
                     <Box display="flex" alignItems="center" justifyContent="space-between" gap={1}>
-                        <Link>Hi! Sign in</Link>
+                        <Text>Hi!</Text>
+                        <Link color={'blue'} onClick={clicksign}> Sign in</Link>
                         <Text>or</Text>
-                        <Link> register</Link>
+                        <Link color={'blue'} onClick={clickres}> register</Link>
                     </Box>
-                    <Link>Daily Deals</Link>
+                    <Link onClick={clickDailyDeals}>Daily Deals</Link>
 
-                    <Link>Help & Contact</Link>
+                    <Link onClick={clickHeplContact}>Help & Contact</Link>
 
                 </Box>
                 <Spacer />
                 <Box display="flex" alignItems="center" justifyContent="space-between" gap={4}>
-                    <Link>Sell</Link>
+                    <Link onClick={clickSell}>Sell</Link>
 
+                    {/* dropdown */}
                     <Menu>
                         <MenuButton
                             transition='all 0.2s'
@@ -46,32 +66,33 @@ const Navbar = () => {
                             </Box>
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>New File</MenuItem>
-                            <MenuItem>New Window</MenuItem>
-                            <MenuDivider />
-                            <MenuItem>Open...</MenuItem>
-                            <MenuItem>Save File</MenuItem>
+                            <Text>Please <Link color={'blue'} href=''>sign in</Link> to view items you are watching.</Text>
                         </MenuList>
                     </Menu>
 
+                    {/* dropdown */}
                     <Menu>
-                        <MenuButton
-
-                        >
+                        <MenuButton>
                             <Box display="flex" alignItems="center" justifyContent="space-between">
                                 My eBay
                                 <IoIosArrowDown />
                             </Box>
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>New File</MenuItem>
-                            <MenuItem>New Window</MenuItem>
-                            <MenuDivider />
-                            <MenuItem>Open...</MenuItem>
-                            <MenuItem>Save File</MenuItem>
+                            <MenuItem>Summary</MenuItem>
+                            <MenuItem>Recently Viewed</MenuItem>
+                            <MenuItem>Bids/Offers</MenuItem>
+                            <MenuItem>Watchlist</MenuItem>
+                            <MenuItem>Purchase History</MenuItem>
+                            <MenuItem>Buy Again</MenuItem>
+                            <MenuItem>Selling</MenuItem>
+                            <MenuItem>Saved Searches</MenuItem>
+                            <MenuItem>Saved Sellers</MenuItem>
+                            <MenuItem>Massage</MenuItem>
                         </MenuList>
                     </Menu>
 
+                    {/* notification bell icon */}
                     <Menu>
                         <MenuButton
                             as={IconButton}
@@ -84,10 +105,10 @@ const Navbar = () => {
                             <MenuItem>
                                 New Tab
                             </MenuItem>
-
                         </MenuList>
                     </Menu>
 
+                    {/* cart icon */}
                     <Menu>
                         <MenuButton
                             as={IconButton}
@@ -95,8 +116,6 @@ const Navbar = () => {
                             icon={<BsCart2 />}
                             _hover={{ color: '#3665F3', bg: 'white' }}
                             bg={"white"}
-
-
                         />
                         <MenuList>
                             <MenuItem>
@@ -107,8 +126,9 @@ const Navbar = () => {
                     </Menu>
                 </Box>
             </Flex>
-            <DownNavbar/>
-            
+            <DownNavbar />
+            <LastNavbar />
+
         </div>
     )
 }
@@ -116,11 +136,626 @@ const Navbar = () => {
 export default Navbar
 
 
+// icons
 
+// Start Down Navbar
 export const DownNavbar = () => {
-  return (
-    <Flex border="1px solid" px={10} py={10} display="flex" alignItems="center" justifyContent="space-between" >
-        jgjhjkhhkhkihkgjhfgj gghgrbhbgjgh
-    </Flex>
-  )
+    return (
+        <div >
+            <Flex border="1px solid" px={10} py={1} display="flex" alignItems="center" justifyContent="space-between" >
+
+                {/* Ebay Logo */}
+
+                <Image
+                    maxW={"120px"}
+                    src='data:image/png;base64,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'
+                    alt='EbayLogo' />
+
+
+                {/* Shop by category Drop Down */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Shop by category
+                            <IoIosArrowDown />
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} gap={"2em"}>
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Collectibles & Arts</MenuItem>
+                                    <MenuItem>Collectibles</MenuItem>
+                                    <MenuItem>Antiques</MenuItem>
+                                    <MenuItem>Sports memorabilia</MenuItem>
+                                    <MenuItem>Art</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Electronics</MenuItem>
+                                    <MenuItem>Computer & tablets</MenuItem>
+                                    <MenuItem>Camera & photo</MenuItem>
+                                    <MenuItem>TV, audio surveillance</MenuItem>
+                                    <MenuItem>Cell phones & accessories</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Fashion</MenuItem>
+                                    <MenuItem>Women</MenuItem>
+                                    <MenuItem>Men</MenuItem>
+                                    <MenuItem>Jewelry & watches</MenuItem>
+                                    <MenuItem>Shoes</MenuItem>
+                                </Box>
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Home & Garden</MenuItem>
+                                    <MenuItem>Yard, garden & outdoor</MenuItem>
+                                    <MenuItem>Crafts</MenuItem>
+                                    <MenuItem>Home improvemnent</MenuItem>
+                                    <MenuItem>Pet supplies</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Auto Parts & Accessories</MenuItem>
+                                    <MenuItem>GPS & Security Devices</MenuItem>
+                                    <MenuItem>Radar & Laser Detectors</MenuItem>
+                                    <MenuItem>Care & Detailing</MenuItem>
+                                    <MenuItem>Scooter Parts & Accessories</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Musical instruments & gear</MenuItem>
+                                    <MenuItem>Guitar</MenuItem>
+                                    <MenuItem>Pro audio equipment</MenuItem>
+                                    <MenuItem>String</MenuItem>
+                                    <MenuItem>Stage lighting & effects</MenuItem>
+                                </Box>
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Sporting & goods</MenuItem>
+                                    <MenuItem>Outdoor sports</MenuItem>
+                                    <MenuItem>Team sports</MenuItem>
+                                    <MenuItem>Exercise & fitness</MenuItem>
+                                    <MenuItem>Golf</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Toys & hobbies</MenuItem>
+                                    <MenuItem>Radio control</MenuItem>
+                                    <MenuItem>Kids toys</MenuItem>
+                                    <MenuItem>Action figures</MenuItem>
+                                    <MenuItem>Dolls & bears</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Other categories</MenuItem>
+                                    <MenuItem>Video games & consoles</MenuItem>
+                                    <MenuItem>Health & beauty</MenuItem>
+                                    <MenuItem>Baby</MenuItem>
+                                    <MenuItem>Business & industrial</MenuItem>
+                                </Box>
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* search with all categories */}
+                <Box w={"100%"} display={"flex"} alignItems={"center"} position={"relative"}>
+                    <IoSearchOutline style={{ position: "absolute", left: "20" }} />
+                    <Input placeholder='      Search for anything' border={"1px solid"} />
+                    <Menu class="search_dropdown">
+                        <MenuButton position={"absolute"} right={"0"} borderLeft={"1px solid"} h={"100%"} w={"9em"} px={3} >
+                            <Box display="flex" alignItems="center" justifyContent="space-between">
+                                All Category
+                                <IoIosArrowDown />
+                            </Box>
+                        </MenuButton>
+                        <MenuList >
+                            <Box className='menulist'>
+                                <MenuItem>Antique</MenuItem>
+                                <MenuItem>Art</MenuItem>
+                                <MenuItem>Baby</MenuItem>
+                                <MenuItem>Books</MenuItem>
+                                <MenuItem>Business & Industrial</MenuItem>
+                                <MenuItem>Cameras & Photo</MenuItem>
+                                <MenuItem>Cell Phones & Accessories</MenuItem>
+                                <MenuItem>Clothing, Shoes & Accessories</MenuItem>
+                                <MenuItem>Coins & Paper Money</MenuItem>
+                                <MenuItem>Collectibles</MenuItem>
+                                <MenuItem>Computers/Tablets & Networking</MenuItem>
+                                <MenuItem>Consumer Electronics</MenuItem>
+                                <MenuItem>Crafts</MenuItem>
+                                <MenuItem>Dolls & Bears</MenuItem>
+                                <MenuItem>DVD & Movies</MenuItem>
+                                <MenuItem>eBay Motors</MenuItem>
+                                <MenuItem>Entertainment Memorabilia</MenuItem>
+                                <MenuItem>Gift Cards & Coupons</MenuItem>
+                                <MenuItem>Health & Beauty</MenuItem>
+                                <MenuItem>Home & Garden</MenuItem>
+                                <MenuItem>Jewelry & Watches</MenuItem>
+                                <MenuItem>Music</MenuItem>
+                                <MenuItem>Musical Instruments & Gear</MenuItem>
+                                <MenuItem>Pet Supplies</MenuItem>
+                                <MenuItem>Pottery & Glass</MenuItem>
+                                <MenuItem>Real Estate</MenuItem>
+                                <MenuItem>Specialty Services</MenuItem>
+                                <MenuItem>Sporting Goods</MenuItem>
+                                <MenuItem>Sports Mem, Cards & Fan Shop</MenuItem>
+                                <MenuItem>Stamps</MenuItem>
+                                <MenuItem>Tickets & Experiences</MenuItem>
+                                <MenuItem>Toys & Hobbies</MenuItem>
+                                <MenuItem>Travel</MenuItem>
+                                <MenuItem>Video Games & Consoles</MenuItem>
+                                <MenuItem>Everything Else</MenuItem>
+                            </Box>
+                        </MenuList>
+                    </Menu>
+
+                </Box>
+
+
+                {/* search button */}
+                <box>
+                    <Button backgroundColor='#3665F3' color={"white"} _hover={{ bg: '#3665F3' }} size='lg' m={3} px={50}>
+                        Search
+                    </Button>
+                </box>
+
+                {/* advance page */}
+                <Box display="flex" alignItems="center" justifyContent="space-between" p={3}>
+                    <Link>Advance</Link>
+                </Box>
+            </Flex >
+        </div>
+
+    )
+}
+
+
+// start Last Navbar
+export const LastNavbar = () => {
+    const navigate = useNavigate()
+    const clickSaved = () => {
+        navigate('/signin')
+    }
+    return (
+        <Flex border="1px solid" px={10} py={1} display="flex" alignItems="center" justifyContent="space-between" >
+            <Box display="flex" alignItems="center" justifyContent="space-between" px={120} gap={4}>
+
+
+                <Link onClick={clickSaved}>Saved</Link>
+
+                {/* Electronics */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Electronics
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>/video games and consoles</MenuItem>
+                                    <MenuItem>Computer and tablets</MenuItem>
+                                    <MenuItem>Cameras and photos</MenuItem>
+                                    <MenuItem>Camera sand drones</MenuItem>
+                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Smart home</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                    <MenuItem>Smart watches</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19392_Fallback_Electronics_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* Motors*/}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Motors
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Car</MenuItem>
+                                    <hr />
+                                    <MenuItem>Auto and truck parts</MenuItem>
+                                    <MenuItem>Tools and supplies</MenuItem>
+                                    <MenuItem>Turbo chargers</MenuItem>
+                                    <MenuItem>Clothing and merchandise</MenuItem>
+                                    <MenuItem>Shock absorbers</MenuItem>
+                                    <MenuItem>Electronic and GPS</MenuItem>
+                                    <MenuItem>Air intake</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}> Motorcycle and more</MenuItem>
+                                    <hr />
+                                    <MenuItem>Motorcycle parts</MenuItem>
+                                    <MenuItem>Body and frame</MenuItem>
+                                    <MenuItem>Engines and parts</MenuItem>
+                                    <MenuItem>Accessories</MenuItem>
+                                    <MenuItem>Exhausts and systems</MenuItem>
+                                    <MenuItem>Rims</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19399_Fallback_PandA_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* Fashion */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Fashion
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Footwear</MenuItem>
+                                    <MenuItem>Women's clothing</MenuItem>
+                                    <MenuItem>Footwear for women</MenuItem>
+                                    <MenuItem>Men's clothing</MenuItem>
+                                    <MenuItem>Men's footwear</MenuItem>
+                                    <MenuItem>Watches</MenuItem>
+                                    <MenuItem>Jewelry</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}> More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Accessories for men</MenuItem>
+                                    <MenuItem>Accessories for women</MenuItem>
+                                    <MenuItem>Bags and wallets for women</MenuItem>
+                                    <MenuItem>Womens sunglasess</MenuItem>
+                                    <MenuItem>Mens sunglasses</MenuItem>
+                                    <MenuItem>Sneakers</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19393_Fallback_Moda_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/*  Collectibles and Art*/}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Collectibles and Art
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}> Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Collectibles</MenuItem>
+                                    <MenuItem>Art</MenuItem>
+                                    <MenuItem>Cartoon characters</MenuItem>
+                                    <MenuItem>Movie and TV characters</MenuItem>
+                                    <MenuItem>Diecast</MenuItem>
+                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Musical memorabilia</MenuItem>
+                                </Box>
+
+                            </Box>
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Sports memorabilia</MenuItem>
+                                    <MenuItem>Trading card games</MenuItem>
+                                    <MenuItem>Antiques</MenuItem>
+                                    <MenuItem>Comics</MenuItem>
+                                    <MenuItem>Funko pop</MenuItem>
+                                    <MenuItem>Star Wars</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19397_Fallback_Collectibles_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* Sports */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Sports
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Cycling</MenuItem>
+                                    <MenuItem>Fitness, running and yoga</MenuItem>
+                                    <MenuItem>Fitness Tech</MenuItem>
+                                    <MenuItem>Fishing</MenuItem>
+                                    <MenuItem>Camping</MenuItem>
+                                    <MenuItem>Scooters</MenuItem>
+                                    <MenuItem>Team sports</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Watersports</MenuItem>
+                                    <MenuItem>Winter sports</MenuItem>
+                                    <MenuItem>Box and MMA</MenuItem>
+                                    <MenuItem>Swimming</MenuItem>
+                                    <MenuItem>GPS & Running Watches</MenuItem>
+                                    <MenuItem>Garmin</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19396_Fallback_Sports_and_Leisure_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/*  Health & Bauty*/}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Health & Bauty
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>Beauty
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Makeup</MenuItem>
+                                    <MenuItem>Health</MenuItem>
+                                    <MenuItem>K-Beauty</MenuItem>
+                                    <MenuItem>Manicure and pedicure</MenuItem>
+                                    <MenuItem>Hair products</MenuItem>
+                                    <MenuItem>Skin products</MenuItem>
+                                    <MenuItem>Orthopedic products</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Vitamins and food supplements</MenuItem>
+                                    <MenuItem>Shaving and waxing</MenuItem>
+                                    <MenuItem>Bath and personal hygiene</MenuItem>
+                                    <MenuItem>Oral hygiene</MenuItem>
+                                    <MenuItem>Massagers</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19394_Fallback_Health_Beauty_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* Industrial equipment */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Industrial equipment
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>/video games and consoles</MenuItem>
+                                    <MenuItem>Computer and tablets</MenuItem>
+                                    <MenuItem>Cameras and photos</MenuItem>
+                                    <MenuItem>Camera sand drones</MenuItem>
+                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Smart home</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                    <MenuItem>Smart watches</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19398_Fallback_IndustrialEquipment_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* Home & Garden */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Home & Garden
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>/video games and consoles</MenuItem>
+                                    <MenuItem>Computer and tablets</MenuItem>
+                                    <MenuItem>Cameras and photos</MenuItem>
+                                    <MenuItem>Camera sand drones</MenuItem>
+                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Smart home</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                    <MenuItem>Smart watches</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19395_Fallback_Home_Garden_770x270.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+                {/* Deals */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Deals
+                        </Box>
+                    </MenuButton>
+                </Menu>
+                {/* Sell */}
+                <Menu>
+                    <MenuButton>
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
+                            Sell
+                        </Box>
+                    </MenuButton>
+                    <MenuList >
+                        <Box display={"flex"} >
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>/video games and consoles</MenuItem>
+                                    <MenuItem>Computer and tablets</MenuItem>
+                                    <MenuItem>Cameras and photos</MenuItem>
+                                    <MenuItem>Camera sand drones</MenuItem>
+                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Smart home</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Box>
+                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                    <MenuItem>Smart watches</MenuItem>
+                                    <MenuItem>Deals</MenuItem>
+                                    <MenuItem>Sell on eBay</MenuItem>
+                                </Box>
+
+                            </Box>
+
+                            <Box>
+                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c1/ROW-19400_Fallback_Sell_770x270_ROW.png' />
+                            </Box>
+
+                        </Box>
+                    </MenuList>
+                </Menu>
+
+
+            </Box>
+        </Flex>
+    )
 }

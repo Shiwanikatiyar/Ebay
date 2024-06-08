@@ -1,13 +1,15 @@
 
 import './App.css'
-import Home from './Pages/Home'
+
+import { AllRoutes } from './Router/AllRoutes'
 
 function App() {
  
 
   return (
    <>
-   <Home/>
+   <AllRoutes/>
+   
    </>
   )
 }
