@@ -621,25 +621,26 @@ export const LastNavbar = () => {
                                 <Box>
                                     <MenuItem as={'b'}>Most populor categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Smartphones and accessories</MenuItem>
-                                    <MenuItem>/video games and consoles</MenuItem>
-                                    <MenuItem>Computer and tablets</MenuItem>
-                                    <MenuItem>Cameras and photos</MenuItem>
-                                    <MenuItem>Camera sand drones</MenuItem>
-                                    <MenuItem>Refubished</MenuItem>
-                                    <MenuItem>Smart home</MenuItem>
+                                    <MenuItem>Dental healthcare</MenuItem>
+                                    <MenuItem>Electronic equipment and supplies</MenuItem>
+                                    <MenuItem>Metallurgy and manufacturing</MenuItem>
+                                    <MenuItem>Motors and industrial automation</MenuItem>
+                                    <MenuItem>Heavy equipment parts</MenuItem>
+                                    <MenuItem>Light industrial tools</MenuItem>
+                                    <MenuItem>Inspection, measurement and testing equipment</MenuItem>
                                 </Box>
-
                             </Box>
 
                             <Box>
                                 <Box>
                                     <MenuItem as={'b'}>More categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Apple</MenuItem>
-                                    <MenuItem>Samsung</MenuItem>
-                                    <MenuItem>Portable audio and headphones</MenuItem>
-                                    <MenuItem>Smart watches</MenuItem>
+                                    <MenuItem>Packing and shipping</MenuItem>
+                                    <MenuItem>Office supplies and equipment</MenuItem>
+                                    <MenuItem>Printing and graphic arts</MenuItem>
+                                    <MenuItem>Restaurants and food service</MenuItem>
+                                    <MenuItem>Maintenance and safety</MenuItem>
+                                    <MenuItem>Retail and services</MenuItem>
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
@@ -667,13 +668,14 @@ export const LastNavbar = () => {
                                 <Box>
                                     <MenuItem as={'b'}>Most populor categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Smartphones and accessories</MenuItem>
-                                    <MenuItem>/video games and consoles</MenuItem>
-                                    <MenuItem>Computer and tablets</MenuItem>
-                                    <MenuItem>Cameras and photos</MenuItem>
-                                    <MenuItem>Camera sand drones</MenuItem>
-                                    <MenuItem>Refubished</MenuItem>
-                                    <MenuItem>Smart home</MenuItem>
+                                    <MenuItem>Workshop Tools and Equipment</MenuItem>
+                                    <MenuItem>Patio, garden and outdoors</MenuItem>
+                                    <MenuItem>Home improvement</MenuItem>
+                                    <MenuItem>Kitchen, dining and bar</MenuItem>
+                                    <MenuItem>Lamps, lights and fans</MenuItem>
+                                    <MenuItem>Interior decoration</MenuItem>
+                                    <MenuItem>Home organization</MenuItem>
+                                    <MenuItem>Home appliances</MenuItem>
                                 </Box>
 
                             </Box>
@@ -682,10 +684,12 @@ export const LastNavbar = () => {
                                 <Box>
                                     <MenuItem as={'b'}>More categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Apple</MenuItem>
-                                    <MenuItem>Samsung</MenuItem>
-                                    <MenuItem>Portable audio and headphones</MenuItem>
-                                    <MenuItem>Smart watches</MenuItem>
+                                    <MenuItem>Toys</MenuItem>
+                                    <MenuItem>Pets</MenuItem>
+                                    <MenuItem>Crafts</MenuItem>
+                                    <MenuItem>Art supplies</MenuItem>
+                                    <MenuItem>Musical instruments</MenuItem>
+                                    <MenuItem>Jewelry and beads</MenuItem>
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
@@ -717,31 +721,27 @@ export const LastNavbar = () => {
                     </MenuButton>
                     <MenuList >
                         <Box display={"flex"} >
-                            <Box>
+                            <Box marginTop={'1em'}>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Smartphones and accessories</MenuItem>
-                                    <MenuItem>/video games and consoles</MenuItem>
-                                    <MenuItem>Computer and tablets</MenuItem>
-                                    <MenuItem>Cameras and photos</MenuItem>
-                                    <MenuItem>Camera sand drones</MenuItem>
-                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>How to create a listing</MenuItem>
+                                    <MenuItem>Join our growth program</MenuItem>
+                                    <MenuItem>Seller center</MenuItem>
+                                    <MenuItem>Seller updates</MenuItem>
+                                    <MenuItem>Seller customer service</MenuItem>
+                                    <MenuItem>eBay managed payments</MenuItem>
                                     <MenuItem>Smart home</MenuItem>
                                 </Box>
 
                             </Box>
 
-                            <Box>
+                            <Box  marginTop={'1em'}>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Apple</MenuItem>
-                                    <MenuItem>Samsung</MenuItem>
-                                    <MenuItem>Portable audio and headphones</MenuItem>
-                                    <MenuItem>Smart watches</MenuItem>
-                                    <MenuItem>Deals</MenuItem>
-                                    <MenuItem>Sell on eBay</MenuItem>
+                                    <MenuItem> Learn to sell</MenuItem>
+                                    <MenuItem>eBay stores</MenuItem>
+                                    <MenuItem>eBay fees</MenuItem>
+                                    <MenuItem>Selling limits</MenuItem>
                                 </Box>
 
                             </Box>
@@ -753,7 +753,6 @@ export const LastNavbar = () => {
                         </Box>
                     </MenuList>
                 </Menu>
-
 
             </Box>
         </Flex>
