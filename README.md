@@ -3,6 +3,7 @@
    Welcome to the eBay Clone, an elegant online store designed to replicate the experience of all shopping products on the well-known eBay platform. This project is built using modern web development tools and technologies, including HTML, CSS, JavaScript, ReactJS (with JSX), and Chakra UI. Our goal is to provide users with an intuitive, visually appealing, and secure shopping experience.
 ## Tech Stack
 [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+<img alt="JSX" src="https://camo.githubusercontent.com/5f8a5e388c5d1754036cfc3576118ae0973d7fb981b80104e7dccdc615134ff1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f435353332d2532333135373242362e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465"/>
 [![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![React](https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 <img alt="JSX" src="https://img.shields.io/badge/JSX-%2300D8FF.svg?style=for-the-badge&logo=react&logoColor=white"/>
