@@ -16,6 +16,9 @@
 * ***Navigation:***
    * Responsive navigation with a dropdown menu for easy access to various categories and sections.
    * Smooth transitions and animations for a seamless user experience
+* ***Responsive Design:***
+   * Fully responsive design to ensure optimal user experience across different devices (desktop, tablet, mobile).
+  * Mobile-friendly layout with touch-friendly elements.
 * ***UI Components:***
   * Utilize Chakra UI components to enhance the overall look and feel of the website.
   * Consistent design elements for a polished and professional appearance.
