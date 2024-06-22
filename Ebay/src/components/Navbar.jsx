@@ -143,7 +143,7 @@ export const DownNavbar = () => {
 
                 {/* Search with all categories */}
                 <Box w="100%" display="flex" alignItems="center" position="relative">
-                    <IoSearchOutline style={{ position: "absolute", left: "20px" }} />
+                    <IoSearchOutline style={{ position: "absolute", left: "10px" }} />
                     <Input placeholder='Search for anything' border="1px solid" />
                     <Menu>
                         <MenuButton position="absolute" right="0" borderLeft="1px solid" h="100%" w="9em" px={3}>
