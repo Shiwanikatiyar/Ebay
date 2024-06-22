@@ -1,23 +1,38 @@
-import React from 'react'
-import {data} from "../db"
-import {Link,Heading, Image,Box} from "@chakra-ui/react"
+import React from 'react';
+import { data } from "../db";
+import { Link, Heading, Image, Box, Stack } from "@chakra-ui/react";
 
 const ShowCategoryProduct = () => {
-console.log(data);
+  console.log(data);
   return (
-    <div style={{marginTop:"5em"}}>
-      <Heading size={"lg"} >Explore Popular Categories</Heading>
-      <Box display="flex" alignItems="center" justifyContent="space-between" gap={5}>
-        
-        {data.map((ele)=>(
-            <div key={ele.id} style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <Image  boxSize='180px'  borderRadius='full'  src={ele.image} alt="image" />
-                <Link as={'b'}>{ele.title}</Link>
-            </div>
+    <Box mt="5em" textAlign="center"> {/* Center heading and box on smaller screens */}
+      <Heading size="lg" mb="2em">Explore Popular Categories</Heading>
+      <Stack
+        direction={{ base: 'column', md: 'row' }} // Responsive direction
+        spacing={5} // Space between items
+        align="center"
+        justify="center"
+      >
+        {data.map((ele) => (
+          <Box
+            key={ele.id}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            textAlign="center" // Center text on smaller screens
+          >
+            <Image
+              boxSize="180px"
+              borderRadius="full"
+              src={ele.image}
+              alt={ele.title}
+            />
+            <Link as="b" mt="1em">{ele.title}</Link>
+          </Box>
         ))}
-      </Box>
-    </div>
-  )
+      </Stack>
+    </Box>
+  );
 }
 
-export default ShowCategoryProduct
+export default ShowCategoryProduct;

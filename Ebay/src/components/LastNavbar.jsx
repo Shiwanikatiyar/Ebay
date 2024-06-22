@@ -1,18 +1,17 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import {
-  Menu, MenuButton, MenuList, MenuItem, 
-} from '@chakra-ui/react'
+import React from 'react';
+import { Flex, Box, Link, Menu, MenuButton, MenuList, MenuItem, Image } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
-function LastNavbar() {
-  const navigate = useNavigate()
+const LastNavbar = () => {
+    const navigate = useNavigate();
+
     const clickSaved = () => {
-        navigate('/signin')
-    }
-    return (
-        <Flex border="1px solid" px={10} py={1} display="flex" alignItems="center" justifyContent="space-between" >
-            <Box display="flex" alignItems="center" justifyContent="space-between" px={120} gap={4}>
+        navigate('/signin');
+    };
 
+    return (
+        <Flex border="1px solid" px={10} py={1} alignItems="center" justifyContent="space-between">
+            <Box display="flex" alignItems="center" justifyContent="space-between" px={120} gap={4} flexWrap="wrap">
 
                 <Link onClick={clickSaved}>Saved</Link>
 
@@ -23,26 +22,24 @@ function LastNavbar() {
                             Electronics
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Smartphones and accessories</MenuItem>
-                                    <MenuItem>/video games and consoles</MenuItem>
-                                    <MenuItem>Computer and tablets</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
                                     <MenuItem>Cameras and photos</MenuItem>
-                                    <MenuItem>Camera sand drones</MenuItem>
-                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Cameras and drones</MenuItem>
+                                    <MenuItem>Refurbished</MenuItem>
                                     <MenuItem>Smart home</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
                                     <MenuItem>Apple</MenuItem>
                                     <MenuItem>Samsung</MenuItem>
@@ -51,29 +48,26 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19392_Fallback_Electronics_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19392_Fallback_Electronics_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
 
-                {/* Motors*/}
+                {/* Motors */}
                 <Menu>
                     <MenuButton>
                         <Box display="flex" alignItems="center" justifyContent="space-between">
                             Motors
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Car</MenuItem>
+                                    <MenuItem as="b">Car</MenuItem>
                                     <hr />
                                     <MenuItem>Auto and truck parts</MenuItem>
                                     <MenuItem>Tools and supplies</MenuItem>
@@ -83,12 +77,10 @@ function LastNavbar() {
                                     <MenuItem>Electronic and GPS</MenuItem>
                                     <MenuItem>Air intake</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}> Motorcycle and more</MenuItem>
+                                    <MenuItem as="b">Motorcycle and more</MenuItem>
                                     <hr />
                                     <MenuItem>Motorcycle parts</MenuItem>
                                     <MenuItem>Body and frame</MenuItem>
@@ -99,13 +91,10 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19399_Fallback_PandA_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19399_Fallback_PandA_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
@@ -117,11 +106,11 @@ function LastNavbar() {
                             Fashion
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Footwear</MenuItem>
                                     <MenuItem>Women's clothing</MenuItem>
@@ -131,59 +120,53 @@ function LastNavbar() {
                                     <MenuItem>Watches</MenuItem>
                                     <MenuItem>Jewelry</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}> More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
                                     <MenuItem>Accessories for men</MenuItem>
                                     <MenuItem>Accessories for women</MenuItem>
                                     <MenuItem>Bags and wallets for women</MenuItem>
-                                    <MenuItem>Womens sunglasess</MenuItem>
-                                    <MenuItem>Mens sunglasses</MenuItem>
+                                    <MenuItem>Women's sunglasses</MenuItem>
+                                    <MenuItem>Men's sunglasses</MenuItem>
                                     <MenuItem>Sneakers</MenuItem>
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19393_Fallback_Moda_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19393_Fallback_Moda_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
 
-                {/*  Collectibles and Art*/}
+                {/* Collectibles and Art */}
                 <Menu>
                     <MenuButton>
                         <Box display="flex" alignItems="center" justifyContent="space-between">
                             Collectibles and Art
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}> Most popular categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Collectibles</MenuItem>
                                     <MenuItem>Art</MenuItem>
                                     <MenuItem>Cartoon characters</MenuItem>
                                     <MenuItem>Movie and TV characters</MenuItem>
                                     <MenuItem>Diecast</MenuItem>
-                                    <MenuItem>Refubished</MenuItem>
+                                    <MenuItem>Refurbished</MenuItem>
                                     <MenuItem>Musical memorabilia</MenuItem>
                                 </Box>
-
                             </Box>
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
                                     <MenuItem>Sports memorabilia</MenuItem>
                                     <MenuItem>Trading card games</MenuItem>
@@ -194,13 +177,10 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19397_Fallback_Collectibles_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19397_Fallback_Collectibles_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
@@ -212,11 +192,11 @@ function LastNavbar() {
                             Sports
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Cycling</MenuItem>
                                     <MenuItem>Fitness, running and yoga</MenuItem>
@@ -226,14 +206,12 @@ function LastNavbar() {
                                     <MenuItem>Scooters</MenuItem>
                                     <MenuItem>Team sports</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
-                                    <MenuItem>Watersports</MenuItem>
+                                    <MenuItem>Water sports</MenuItem>
                                     <MenuItem>Winter sports</MenuItem>
                                     <MenuItem>Box and MMA</MenuItem>
                                     <MenuItem>Swimming</MenuItem>
@@ -242,29 +220,26 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19396_Fallback_Sports_and_Leisure_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19396_Fallback_Sports_and_Leisure_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
 
-                {/*  Health & Bauty*/}
+                {/* Health & Beauty */}
                 <Menu>
                     <MenuButton>
                         <Box display="flex" alignItems="center" justifyContent="space-between">
-                            Health & Bauty
+                            Health & Beauty
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
-                            <Box>Beauty
+                    <MenuList>
+                        <Box display="flex">
+                            <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Makeup</MenuItem>
                                     <MenuItem>Health</MenuItem>
@@ -274,12 +249,10 @@ function LastNavbar() {
                                     <MenuItem>Skin products</MenuItem>
                                     <MenuItem>Orthopedic products</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
                                     <MenuItem>Vitamins and food supplements</MenuItem>
                                     <MenuItem>Shaving and waxing</MenuItem>
@@ -289,13 +262,10 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19394_Fallback_Health_Beauty_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19394_Fallback_Health_Beauty_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
@@ -307,11 +277,11 @@ function LastNavbar() {
                             Industrial equipment
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Dental healthcare</MenuItem>
                                     <MenuItem>Electronic equipment and supplies</MenuItem>
@@ -322,10 +292,9 @@ function LastNavbar() {
                                     <MenuItem>Inspection, measurement and testing equipment</MenuItem>
                                 </Box>
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
                                     <MenuItem>Packing and shipping</MenuItem>
                                     <MenuItem>Office supplies and equipment</MenuItem>
@@ -336,13 +305,10 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19398_Fallback_IndustrialEquipment_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19398_Fallback_IndustrialEquipment_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
@@ -354,11 +320,11 @@ function LastNavbar() {
                             Home & Garden
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
+                    <MenuList>
+                        <Box display="flex">
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>Most populor categories</MenuItem>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
                                     <hr />
                                     <MenuItem>Workshop Tools and Equipment</MenuItem>
                                     <MenuItem>Patio, garden and outdoors</MenuItem>
@@ -369,12 +335,10 @@ function LastNavbar() {
                                     <MenuItem>Home organization</MenuItem>
                                     <MenuItem>Home appliances</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
                                 <Box>
-                                    <MenuItem as={'b'}>More categories</MenuItem>
+                                    <MenuItem as="b">More categories</MenuItem>
                                     <hr />
                                     <MenuItem>Toys</MenuItem>
                                     <MenuItem>Pets</MenuItem>
@@ -385,13 +349,10 @@ function LastNavbar() {
                                     <MenuItem>Deals</MenuItem>
                                     <MenuItem>Sell on eBay</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c01/ROW-19395_Fallback_Home_Garden_770x270.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c01/ROW-19395_Fallback_Home_Garden_770x270.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
@@ -404,6 +365,7 @@ function LastNavbar() {
                         </Box>
                     </MenuButton>
                 </Menu>
+
                 {/* Sell */}
                 <Menu>
                     <MenuButton>
@@ -411,9 +373,9 @@ function LastNavbar() {
                             Sell
                         </Box>
                     </MenuButton>
-                    <MenuList >
-                        <Box display={"flex"} >
-                            <Box marginTop={'1em'}>
+                    <MenuList>
+                        <Box display="flex">
+                            <Box marginTop="1em">
                                 <Box>
                                     <hr />
                                     <MenuItem>How to create a listing</MenuItem>
@@ -424,31 +386,26 @@ function LastNavbar() {
                                     <MenuItem>eBay managed payments</MenuItem>
                                     <MenuItem>Smart home</MenuItem>
                                 </Box>
-
                             </Box>
-
-                            <Box  marginTop={'1em'}>
+                            <Box marginTop="1em">
                                 <Box>
                                     <hr />
-                                    <MenuItem> Learn to sell</MenuItem>
+                                    <MenuItem>Learn to sell</MenuItem>
                                     <MenuItem>eBay stores</MenuItem>
                                     <MenuItem>eBay fees</MenuItem>
                                     <MenuItem>Selling limits</MenuItem>
                                 </Box>
-
                             </Box>
-
                             <Box>
-                                <Image marginTop={'0.5em'} borderRadius={'1em'} src='https://ir.ebaystatic.com/cr/v/c1/ROW-19400_Fallback_Sell_770x270_ROW.png' />
+                                <Image marginTop="0.5em" borderRadius="1em" src="https://ir.ebaystatic.com/cr/v/c1/ROW-19400_Fallback_Sell_770x270_ROW.png" />
                             </Box>
-
                         </Box>
                     </MenuList>
                 </Menu>
 
             </Box>
         </Flex>
-    )
-}
+    );
+};
 
-export default LastNavbar
+export default LastNavbar;
