@@ -174,7 +174,7 @@ export const DownNavbar = () => {
                 </Box>
 
                 {/* Advance page */}
-                <Box display={{ base: 'none', md: 'block' }} p={3}>   // Hide on small screens
+                <Box display={{ base: 'none', md: 'block' }} p={3}>  
                     <Link>Advance</Link>
                 </Box>
             </Flex>
