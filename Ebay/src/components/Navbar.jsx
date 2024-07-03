@@ -143,9 +143,9 @@ export const DownNavbar = () => {
 
                 {/* Search with all categories */}
                 <Box w="100%" display="flex" alignItems="center" position="relative">
-                    <IoSearchOutline style={{ position: "absolute", left:'15px' }} />
+                    <IoSearchOutline style={{ position: "absolute", left: '15px' }} />
                     <Input
-                    placeholder='     Search for anything' border="1px solid" />
+                        placeholder='     Search for anything' border="1px solid" />
                     <Menu>
                         <MenuButton position="absolute" right="0" borderLeft="1px solid" h="100%" w="9em" px={3}>
                             <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -174,7 +174,7 @@ export const DownNavbar = () => {
                 </Box>
 
                 {/* Advance page */}
-                <Box display={{ base: 'none', md: 'block' }} p={3}>  
+                <Box display={{ base: 'none', md: 'block' }} p={3}>
                     <Link>Advance</Link>
                 </Box>
             </Flex>
@@ -217,7 +217,22 @@ export const LastNavbar = () => {
                 </MenuButton>
                 <MenuList>
                     {/* Electronics Menu Items */}
-                    {/* Assuming similar structure for other menu sections */}
+                    <MenuItem>Smartphones and accessories</MenuItem>
+                    <MenuItem>Video games and consoles</MenuItem>
+                    <MenuItem>Computers and tablets</MenuItem>
+                    <MenuItem>Cameras and photos</MenuItem>
+                    <MenuItem>Camera drones</MenuItem>
+                    <MenuItem>Refurbished</MenuItem>
+                    <MenuItem>Smart home</MenuItem>
+                </MenuList>
+
+                <MenuList>
+                    <MenuItem>Apple</MenuItem>
+                    <MenuItem>Samsung</MenuItem>
+                    <MenuItem>Portable audio and headphones</MenuItem>
+                    <MenuItem>Smart watches</MenuItem>
+                    <MenuItem>Deals</MenuItem>
+                    <MenuItem>Sell on eBay</MenuItem>
                 </MenuList>
             </Menu>
 
