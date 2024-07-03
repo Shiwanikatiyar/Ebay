@@ -174,7 +174,7 @@ export const DownNavbar = () => {
                 </Box>
 
                 {/* Advance page */}
-                <Box display={{ base: 'none', md: 'block' }} p={3}>
+                <Box display={{ base: 'none', md: 'block' }} p={3}>   // Hide on small screens
                     <Link>Advance</Link>
                 </Box>
             </Flex>
@@ -212,7 +212,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Electronics
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -241,7 +240,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Motors
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -254,7 +252,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Fashion
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -267,7 +264,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Collectibles and Art
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -280,7 +276,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Sports
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -293,7 +288,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Health & Beauty
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -306,7 +300,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Industrial equipment
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -319,7 +312,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Home & Garden
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
@@ -332,7 +324,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Deals
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
             </Menu>
@@ -342,7 +333,6 @@ export const LastNavbar = () => {
                 <MenuButton>
                     <Box display="flex" alignItems="center" justifyContent="space-between">
                         Sell
-                        <IoIosArrowDown />
                     </Box>
                 </MenuButton>
                 <MenuList>
