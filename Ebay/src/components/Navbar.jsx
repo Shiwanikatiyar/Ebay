@@ -94,7 +94,27 @@ const Navbar = () => {
                         </MenuList>
                     </Menu>
 
-                    {/* Add more dropdowns and icons as needed */}
+                    <Menu>
+                        <MenuButton>
+                            My eBay
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem>Expand My eBay</MenuItem>
+                            <MenuItem> Summary</MenuItem>
+                            <MenuItem>Recently Viewed</MenuItem>
+                            <MenuItem> Bids/Offers</MenuItem>
+                            <MenuItem> Watchlist</MenuItem>
+                            <MenuItem>Purchase History</MenuItem>
+                            <MenuItem>Buy Again</MenuItem>
+                            <MenuItem> Selling</MenuItem>
+                            <MenuItem>Saved Searches</MenuItem>
+                            <MenuItem>Saved Sellers</MenuItem>
+                            <MenuItem> Messages</MenuItem>
+                            
+                        </MenuList>
+                    </Menu>
+
+
                 </Box>
             </Flex>
             {/* Add additional components like DownNavbar and LastNavbar */}
