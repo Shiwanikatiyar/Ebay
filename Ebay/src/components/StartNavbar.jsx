@@ -31,18 +31,16 @@ function StartNavbar() {
     return (
         <Box boxSize={'95%'} paddingLeft={{ base: '1em', md: '5em' }}>
             <Flex px={{ base: 2, md: 10 }} alignItems="center" justifyContent="space-between">
-                <Box display={{ base: 'none', md: 'flex' }} alignItems="center" justifyContent="space-between" gap={6}>
+                <Box display={{ base: 'none', md: 'flex' }} alignItems="center" justifyContent="space-between" gap={4}>
                     <Text>Hi!</Text>
                     <Link color={'blue'} onClick={clickSign}> Sign in</Link>
                     <Text>or</Text>
                     <Link color={'blue'} onClick={clickRes}> register</Link>
-                </Box>
-                <Box display={{ base: 'none', md: 'flex' }} gap={4}>
                     <Link onClick={clickDailyDeals}>Daily Deals</Link>
                     <Link onClick={clickHelpContact}>Help & Contact</Link>
                     <Link onClick={clickSell}>Sell</Link>
                 </Box>
-                <Box display={{ base: 'flex', md: 'none' }} gap={4}>
+                <Box display={{ base: 'none', md: 'flex' }} gap={4}>
                     <Menu>
                         <MenuButton transition='all 0.2s'>
                             <Box display="flex" alignItems="center" justifyContent="space-between">

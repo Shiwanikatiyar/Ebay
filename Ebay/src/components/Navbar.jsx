@@ -21,11 +21,11 @@ import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
     const navigate = useNavigate();
 
-    const clickres = () => {
+    const clickRes = () => {
         navigate("/register");
     };
 
-    const clicksign = () => {
+    const clickSign = () => {
         navigate("/signin");
     };
 
@@ -42,87 +42,70 @@ const Navbar = () => {
     };
 
     return (
-        <div>
-            <Flex
-                border="1px solid"
-                px={[2, 4, 6, 10]} // Responsive padding example
-                py={2} // Responsive padding example
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
-                flexDirection={['column', 'row']} // Adjust flex direction for small screens
-            >
-                <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    gap={4}
-                    flexWrap="wrap" // Allow items to wrap on smaller screens
-                    mb={[2, 0]} // Responsive margin bottom example
-                    width={['100%', 'auto']} // Ensure full width on mobile
-                >
-                    {/* Left section */}
-                    <Box display="flex" alignItems="center" gap={1}>
-                        <Text>Hi!</Text>
-                        <Link color={'blue'} onClick={clicksign}>Sign in</Link>
-                        <Text>or</Text>
-                        <Link color={'blue'} onClick={clickres}>register</Link>
-                    </Box>
+        <Box boxSize={'95%'} paddingLeft={{ base: '1em', md: '5em' }}>
+            <Flex px={{ base: 2, md: 10 }} alignItems="center" justifyContent="space-between">
+                <Box display={{ base: 'none', md: 'flex' }} alignItems="center" justifyContent="space-between" gap={4}>
+                    <Text>Hi!</Text>
+                    <Link color={'blue'} onClick={clickSign}> Sign in</Link>
+                    <Text>or</Text>
+                    <Link color={'blue'} onClick={clickRes}> register</Link>
                     <Link onClick={clickDailyDeals}>Daily Deals</Link>
                     <Link onClick={clickHelpContact}>Help & Contact</Link>
+                    <Link onClick={clickSell}>Sell</Link>
                 </Box>
 
-                <Spacer />
-
-                {/* Right section */}
-                <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    gap={4}
-                >
-                    <Link onClick={clickSell}>Sell</Link>
-
-                    {/* Dropdown example */}
+                <Box display={{ base: 'none', md: 'flex' }} gap={4}>
+                    <Menu>
+                        <MenuButton transition='all 0.2s'>
+                            <Box display="flex" alignItems="center" justifyContent="space-between">
+                                Watchlist
+                                <IoIosArrowDown />
+                            </Box>
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem>Please <Link color={'blue'} href=''>sign in</Link> to view items you are watching.</MenuItem>
+                        </MenuList>
+                    </Menu>
                     <Menu>
                         <MenuButton>
-                            Watchlist
+                            <Box display="flex" alignItems="center" justifyContent="space-between">
+                                My eBay
+                                <IoIosArrowDown />
+                            </Box>
                         </MenuButton>
                         <MenuList>
                             <MenuItem>Summary</MenuItem>
-                            {/* Add more menu items */}
-                        </MenuList>
-                    </Menu>
-
-                    <Menu>
-                        <MenuButton>
-                            My eBay
-                        </MenuButton>
-                        <MenuList>
-                            <MenuItem>Expand My eBay</MenuItem>
-                            <MenuItem> Summary</MenuItem>
                             <MenuItem>Recently Viewed</MenuItem>
-                            <MenuItem> Bids/Offers</MenuItem>
-                            <MenuItem> Watchlist</MenuItem>
+                            <MenuItem>Bids/Offers</MenuItem>
+                            <MenuItem>Watchlist</MenuItem>
                             <MenuItem>Purchase History</MenuItem>
                             <MenuItem>Buy Again</MenuItem>
-                            <MenuItem> Selling</MenuItem>
+                            <MenuItem>Selling</MenuItem>
                             <MenuItem>Saved Searches</MenuItem>
                             <MenuItem>Saved Sellers</MenuItem>
-                            <MenuItem> Messages</MenuItem>
-                            
+                            <MenuItem>Message</MenuItem>
                         </MenuList>
                     </Menu>
-
-
+                    <Menu>
+                        <MenuButton as={IconButton} aria-label='Options' icon={<FaRegBell />} bg={"white"} _hover={{ bg: 'white' }} />
+                        <MenuList>
+                            <MenuItem>New Tab</MenuItem>
+                        </MenuList>
+                    </Menu>
+                    <Menu>
+                        <MenuButton as={IconButton} aria-label='Options' icon={<BsCart2 />} _hover={{ color: '#3665F3', bg: 'white' }} bg={"white"} />
+                        <MenuList>
+                            <MenuItem>New Tab</MenuItem>
+                        </MenuList>
+                    </Menu>
                 </Box>
             </Flex>
-            {/* Add additional components like DownNavbar and LastNavbar */}
             <DownNavbar />
             <LastNavbar />
-        </div>
+        </Box>
+
     );
-};
+}
 
 export default Navbar;
 
@@ -157,7 +140,77 @@ export const DownNavbar = () => {
                         </Box>
                     </MenuButton>
                     <MenuList>
-                        {/* Your category items here */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                            <Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                            </Box>
+                            <Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                            </Box>
+                            <Box>
+                                <Box>
+                                    <MenuItem as="b">More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                </Box>
+                            </Box>
+                        </Box>
                     </MenuList>
                 </Menu>
 
@@ -174,7 +227,18 @@ export const DownNavbar = () => {
                             </Box>
                         </MenuButton>
                         <MenuList>
-                            {/* Your category items here */}
+                            <Box display={{ base: 'block', sm: 'block' , lg: 'block', md: 'flex' }}
+                                maxHeight="270px"
+                                overflowY="auto">
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <MenuItem>Smartphones and accessories</MenuItem>
+                                <MenuItem>Video games and consoles</MenuItem>
+                                <MenuItem>Computers and tablets</MenuItem>
+                                <MenuItem>Cameras and photos</MenuItem>
+                                <MenuItem>Cameras and drones</MenuItem>
+                                <MenuItem>Refurbished</MenuItem>
+                                <MenuItem>Smart home</MenuItem>
+                            </Box>
                         </MenuList>
                     </Menu>
                 </Box>
@@ -194,7 +258,7 @@ export const DownNavbar = () => {
                 </Box>
 
                 {/* Advance page */}
-                <Box display={{ base: 'none', md: 'block' }} p={3}>   // Hide on small screens
+                <Box display={{ base: 'none', md: 'block' }} p={3}>
                     <Link>Advance</Link>
                 </Box>
             </Flex>
@@ -230,119 +294,400 @@ export const LastNavbar = () => {
             {/* Electronics */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Electronics
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Electronics Menu Items */}
-                    <MenuItem>Smartphones and accessories</MenuItem>
-                    <MenuItem>Video games and consoles</MenuItem>
-                    <MenuItem>Computers and tablets</MenuItem>
-                    <MenuItem>Cameras and photos</MenuItem>
-                    <MenuItem>Camera drones</MenuItem>
-                    <MenuItem>Refurbished</MenuItem>
-                    <MenuItem>Smart home</MenuItem>
-                </MenuList>
-
-                <MenuList>
-                    <MenuItem>Apple</MenuItem>
-                    <MenuItem>Samsung</MenuItem>
-                    <MenuItem>Portable audio and headphones</MenuItem>
-                    <MenuItem>Smart watches</MenuItem>
-                    <MenuItem>Deals</MenuItem>
-                    <MenuItem>Sell on eBay</MenuItem>
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Smartphones and accessories</MenuItem>
+                                <MenuItem>Video games and consoles</MenuItem>
+                                <MenuItem>Computers and tablets</MenuItem>
+                                <MenuItem>Cameras and photos</MenuItem>
+                                <MenuItem>Cameras and drones</MenuItem>
+                                <MenuItem>Refurbished</MenuItem>
+                                <MenuItem>Smart home</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Apple</MenuItem>
+                                <MenuItem>Samsung</MenuItem>
+                                <MenuItem>Portable audio and headphones</MenuItem>
+                                <MenuItem>Smart watches</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19392_Fallback_Electronics_770x270.png"
+                                width={{ base: '100%', md: 'auto' }} />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
+
 
             {/* Motors */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Motors
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Motors Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Car</MenuItem>
+                                <hr />
+                                <MenuItem>Auto and truck parts</MenuItem>
+                                <MenuItem>Tools and supplies</MenuItem>
+                                <MenuItem>Turbo chargers</MenuItem>
+                                <MenuItem>Clothing and merchandise</MenuItem>
+                                <MenuItem>Shock absorbers</MenuItem>
+                                <MenuItem>Electronic and GPS</MenuItem>
+                                <MenuItem>Air intake</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Motorcycle and more</MenuItem>
+                                <hr />
+                                <MenuItem>Motorcycle parts</MenuItem>
+                                <MenuItem>Body and frame</MenuItem>
+                                <MenuItem>Engines and parts</MenuItem>
+                                <MenuItem>Accessories</MenuItem>
+                                <MenuItem>Exhausts and systems</MenuItem>
+                                <MenuItem>Rims</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }} src="https://ir.ebaystatic.com/cr/v/c01/ROW-19399_Fallback_PandA_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Fashion */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Fashion
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Fashion Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Footwear</MenuItem>
+                                <MenuItem>Women's clothing</MenuItem>
+                                <MenuItem>Footwear for women</MenuItem>
+                                <MenuItem>Men's clothing</MenuItem>
+                                <MenuItem>Men's footwear</MenuItem>
+                                <MenuItem>Watches</MenuItem>
+                                <MenuItem>Jewelry</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Accessories for men</MenuItem>
+                                <MenuItem>Accessories for women</MenuItem>
+                                <MenuItem>Bags and wallets for women</MenuItem>
+                                <MenuItem>Women's sunglasses</MenuItem>
+                                <MenuItem>Men's sunglasses</MenuItem>
+                                <MenuItem>Sneakers</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19393_Fallback_Moda_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Collectibles and Art */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Collectibles and Art
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Collectibles and Art Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Collectibles</MenuItem>
+                                <MenuItem>Art</MenuItem>
+                                <MenuItem>Cartoon characters</MenuItem>
+                                <MenuItem>Movie and TV characters</MenuItem>
+                                <MenuItem>Diecast</MenuItem>
+                                <MenuItem>Refurbished</MenuItem>
+                                <MenuItem>Musical memorabilia</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Sports memorabilia</MenuItem>
+                                <MenuItem>Trading card games</MenuItem>
+                                <MenuItem>Antiques</MenuItem>
+                                <MenuItem>Comics</MenuItem>
+                                <MenuItem>Funko pop</MenuItem>
+                                <MenuItem>Star Wars</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19397_Fallback_Collectibles_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Sports */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Sports
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Sports Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Cycling</MenuItem>
+                                <MenuItem>Fitness, running and yoga</MenuItem>
+                                <MenuItem>Fitness Tech</MenuItem>
+                                <MenuItem>Fishing</MenuItem>
+                                <MenuItem>Camping</MenuItem>
+                                <MenuItem>Scooters</MenuItem>
+                                <MenuItem>Team sports</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Water sports</MenuItem>
+                                <MenuItem>Winter sports</MenuItem>
+                                <MenuItem>Box and MMA</MenuItem>
+                                <MenuItem>Swimming</MenuItem>
+                                <MenuItem>GPS & Running Watches</MenuItem>
+                                <MenuItem>Garmin</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19396_Fallback_Sports_and_Leisure_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Health & Beauty */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Health & Beauty
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Health & Beauty Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Makeup</MenuItem>
+                                <MenuItem>Health</MenuItem>
+                                <MenuItem>K-Beauty</MenuItem>
+                                <MenuItem>Manicure and pedicure</MenuItem>
+                                <MenuItem>Hair products</MenuItem>
+                                <MenuItem>Skin products</MenuItem>
+                                <MenuItem>Orthopedic products</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Vitamins and food supplements</MenuItem>
+                                <MenuItem>Shaving and waxing</MenuItem>
+                                <MenuItem>Bath and personal hygiene</MenuItem>
+                                <MenuItem>Oral hygiene</MenuItem>
+                                <MenuItem>Massagers</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19394_Fallback_Health_Beauty_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Industrial equipment */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Industrial equipment
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Industrial equipment Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Dental healthcare</MenuItem>
+                                <MenuItem>Electronic equipment and supplies</MenuItem>
+                                <MenuItem>Metallurgy and manufacturing</MenuItem>
+                                <MenuItem>Motors and industrial automation</MenuItem>
+                                <MenuItem>Heavy equipment parts</MenuItem>
+                                <MenuItem>Light industrial tools</MenuItem>
+                                <MenuItem>Inspection, measurement and testing equipment</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Packing and shipping</MenuItem>
+                                <MenuItem>Office supplies and equipment</MenuItem>
+                                <MenuItem>Printing and graphic arts</MenuItem>
+                                <MenuItem>Restaurants and food service</MenuItem>
+                                <MenuItem>Maintenance and safety</MenuItem>
+                                <MenuItem>Retail and services</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19398_Fallback_IndustrialEquipment_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Home & Garden */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Home & Garden
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Home & Garden Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">Most popular categories</MenuItem>
+                                <hr />
+                                <MenuItem>Workshop Tools and Equipment</MenuItem>
+                                <MenuItem>Patio, garden and outdoors</MenuItem>
+                                <MenuItem>Home improvement</MenuItem>
+                                <MenuItem>Kitchen, dining and bar</MenuItem>
+                                <MenuItem>Lamps, lights and fans</MenuItem>
+                                <MenuItem>Interior decoration</MenuItem>
+                                <MenuItem>Home organization</MenuItem>
+                                <MenuItem>Home appliances</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Box>
+                                <MenuItem as="b">More categories</MenuItem>
+                                <hr />
+                                <MenuItem>Toys</MenuItem>
+                                <MenuItem>Pets</MenuItem>
+                                <MenuItem>Crafts</MenuItem>
+                                <MenuItem>Art supplies</MenuItem>
+                                <MenuItem>Musical instruments</MenuItem>
+                                <MenuItem>Jewelry and beads</MenuItem>
+                                <MenuItem>Deals</MenuItem>
+                                <MenuItem>Sell on eBay</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c01/ROW-19395_Fallback_Home_Garden_770x270.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
 
             {/* Deals */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}>
+
                         Deals
                     </Box>
                 </MenuButton>
@@ -351,12 +696,43 @@ export const LastNavbar = () => {
             {/* Sell */}
             <Menu>
                 <MenuButton>
-                    <Box display="flex" alignItems="center" justifyContent="space-between">
+                    <Box display="flex" alignItems="center" justifyContent="space-between"
+                        px={{ base: 2, md: 0 }}
+                        mb={{ base: 4, md: 0 }}
+                    >
                         Sell
                     </Box>
                 </MenuButton>
                 <MenuList>
-                    {/* Sell Menu Items */}
+                    <Box display={{ base: 'block', md: 'flex' }}>
+                        <Box marginTop="1em">
+                            <Box>
+                                <hr />
+                                <MenuItem>How to create a listing</MenuItem>
+                                <MenuItem>Join our growth program</MenuItem>
+                                <MenuItem>Seller center</MenuItem>
+                                <MenuItem>Seller updates</MenuItem>
+                                <MenuItem>Seller customer service</MenuItem>
+                                <MenuItem>eBay managed payments</MenuItem>
+                                <MenuItem>Smart home</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box marginTop="1em">
+                            <Box>
+                                <hr />
+                                <MenuItem>Learn to sell</MenuItem>
+                                <MenuItem>eBay stores</MenuItem>
+                                <MenuItem>eBay fees</MenuItem>
+                                <MenuItem>Selling limits</MenuItem>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Image marginTop={{ base: '1em', md: '0.5em' }}
+                                borderRadius="1em"
+                                width={{ base: '100%', md: 'auto' }}
+                                src="https://ir.ebaystatic.com/cr/v/c1/ROW-19400_Fallback_Sell_770x270_ROW.png" />
+                        </Box>
+                    </Box>
                 </MenuList>
             </Menu>
         </Flex>

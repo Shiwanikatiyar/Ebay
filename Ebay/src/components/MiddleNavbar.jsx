@@ -27,11 +27,82 @@ function MiddleNavbar() {
                     </MenuButton>
                     <MenuList>
                         {/* Menu items here */}
+                        <Box display={{ base: 'block', md: 'flex' }}>
+                            <Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                            </Box>
+                            <Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                </Box>
+                            </Box>
+                            <Box>
+                                <Box>
+                                    <MenuItem as="b">More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                </Box>
+                                <Box>
+                                    <MenuItem as="b">More categories</MenuItem>
+                                    <hr />
+                                    <MenuItem>Apple</MenuItem>
+                                    <MenuItem>Samsung</MenuItem>
+                                    <MenuItem>Portable audio and headphones</MenuItem>
+                                </Box>
+                            </Box>
+                        </Box>
                     </MenuList>
                 </Menu>
 
                 {/* Search with all categories */}
-                <Box position="relative" w={{ base: "100%" ,md:'70%'}} display="flex" alignItems="center">
+                <Box position="relative" w={{ base: "100%", md: '70%' }} display="flex" alignItems="center">
                     <IoSearchOutline style={{ position: "absolute", left: "20px" }} />
                     <Input placeholder="Search for anything" border="1px solid" />
                     <Menu class="search_dropdown">
@@ -42,7 +113,20 @@ function MiddleNavbar() {
                             </Flex>
                         </MenuButton>
                         <MenuList>
-                            {/* Menu items here */}
+                            <Box display={{ base: 'block', sm: 'block' , lg: 'block', md: 'flex' }}
+                                maxHeight="270px"
+                                overflowY="auto">
+                                <Box>
+                                    <MenuItem as="b">Most popular categories</MenuItem>
+                                    <MenuItem>Smartphones and accessories</MenuItem>
+                                    <MenuItem>Video games and consoles</MenuItem>
+                                    <MenuItem>Computers and tablets</MenuItem>
+                                    <MenuItem>Cameras and photos</MenuItem>
+                                    <MenuItem>Cameras and drones</MenuItem>
+                                    <MenuItem>Refurbished</MenuItem>
+                                    <MenuItem>Smart home</MenuItem>
+                                </Box>
+                            </Box>
                         </MenuList>
                     </Menu>
                 </Box>
